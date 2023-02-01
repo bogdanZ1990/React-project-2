@@ -43,11 +43,11 @@ body {
   color: inherit;
 }
 
-.navBar li a.active {
+.mainNavLink.active {
   color: #e11936;
 }
 
-.navBar li a:hover {
+.mainNavLink:hover {
   color: #e11936;
 }
 
@@ -94,11 +94,12 @@ body {
   color: inherit;
 }
 
-.sideNavBar li a:active {
-  color: #e11936;
+
+.navLink:hover .subnavLink {
+  color: black
 }
 
-.sideNavBar li a:hover {
+.navLink:hover {
   color: #e11936;
 }
 

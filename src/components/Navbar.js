@@ -8,18 +8,18 @@ export default function Navbar({numOfSubs, myOrderPrice}){
 
     return (
       <nav className="navBar">
-          <NavLink to='/home/subs/hookandladder' className="logo">
+          <NavLink className='navLink logo' to='/home/subs/hookandladder' >
             <img alt='firehouse logo' src='https://order.firehousesubs.com/assets/images/logo.png'/>
           </NavLink>
         <ul>
           <li>
-            <NavLink to='/home/subs/hookandladder'>HOME</NavLink>
+            <NavLink className='mainNavLink' to='/home/subs/hookandladder'>HOME</NavLink>
           </li>
           <li>
-            <NavLink to='/signin'><Icon icon={user} size={30}/>SIGN IN</NavLink>
+            <NavLink className='mainNavLink' to='/signin'><Icon icon={user} size={30}/>SIGN IN</NavLink>
           </li>
           <li>
-            <NavLink to='/myorder'>
+            <NavLink className='mainNavLink' to='/myorder'>
               <div className='nav_myorder'>
                 <span><Icon icon={shoppingBag} size={30}/> MY ORDER {`(${numOfSubs})`}</span>
                 <span>${myOrderPrice.toFixed(2)}</span>
