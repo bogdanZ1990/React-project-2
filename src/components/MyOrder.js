@@ -4,15 +4,11 @@ import SummaryList from "./SummaryList";
 
 
 
-export default function MyOrder({myOrder, handleDelete}){
+export default function MyOrder({myOrder, myOrderPrice, handleDelete}){
     
-
     const date = new DateObject().format("MM/DD/YYYY");
     const time = new DateObject().add(15, 'minute').format('hh:mm a');
-    
-    
- 
-
+    const orderTax = Number((myOrderPrice * 0.07).toFixed(2));
 
     return (
 
@@ -62,15 +58,15 @@ export default function MyOrder({myOrder, handleDelete}){
                     <div className="total_cont">
                         <div className="subtotal">
                             <span>SubTotal:</span>
-                            <span>$0.00</span>
+                            <span>${myOrderPrice}</span>
                         </div>
                         <div className="tax">
                             <span>Tax:</span>
-                            <span>$0.00</span>
+                            <span>${orderTax}</span>
                         </div>
                         <div className="total">
                             <span>Total:</span>
-                            <span>$0.00</span>
+                            <span>${(myOrderPrice + orderTax).toFixed(2)}</span>
                         </div>
                         <div>
                             <button>PAYMENT</button>

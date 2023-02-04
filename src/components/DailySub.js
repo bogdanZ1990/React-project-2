@@ -7,15 +7,8 @@ import Footer from './Footer';
 
 export default function DailySub({dailySub, setDailySub, addToMyOrder}){
 
-
     // dailySub.price.Medium = (dailySub.price.Medium - 0.40)
-
-    
-
     useEffect(() => {
-        
-        // dailySub.price.Medium = (dailySub.price.Medium - 0.40)
-
         setDailySub({
             ...dailySub,
         price : {

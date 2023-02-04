@@ -59,7 +59,7 @@ body {
 
 .home {
   display: flex;
-  position: relative;
+  position: relative; 
   left: 300px;
 }
 
@@ -600,6 +600,7 @@ body {
 .footer {
   background-color: #dadada;
   position: relative;
+  /* width: 100%; */
 }
 
 .footer_top {

@@ -22,7 +22,7 @@ export default function Navbar({numOfSubs, myOrderPrice}){
             <NavLink className='mainNavLink' to='/myorder'>
               <div className='nav_myorder'>
                 <span><Icon icon={shoppingBag} size={30}/> MY ORDER {`(${numOfSubs})`}</span>
-                <span>${myOrderPrice.toFixed(2)}</span>
+                <span>${myOrderPrice}</span>
               </div>
             </NavLink>
           </li>

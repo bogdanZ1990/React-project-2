@@ -57,14 +57,15 @@ function App() {
     const newArr = [...myOrder, obj];
     setMyOrder(newArr);
     setNumOfSubs(currentVal => currentVal + obj.amount);
-    setMyOrderPrice(currentVal => currentVal + (obj.price * obj.amount));
+    setMyOrderPrice(currentVal => Number((currentVal + (obj.price * obj.amount)).toFixed(2)));
     console.log(myOrder);
   }
 
   function handleDelete(card){
-    const result = myOrder.filter(elem => elem.id !== card.id)
+    const result = myOrder.filter(elem => elem.orderId !== card.orderId)
     setMyOrder(result);
     setNumOfSubs(currentVal => currentVal - card.amount);
+    setMyOrderPrice(currentVal => currentVal - (card.price * card.amount).toFixed(2))
   }
 
   
@@ -82,7 +83,7 @@ function App() {
           <Route path='/home/drinks' element={<Drinks database={database} addToMyOrder={addToMyOrder}/>}  />
           <Route path='/home/kids' element={<KidsCombos database={database} addToMyOrder={addToMyOrder}/>}  />
           <Route path='/signin' element={<SignIn />} />
-          <Route path='/myorder' element={<MyOrder myOrder={myOrder} handleDelete={handleDelete} />} />
+          <Route path='/myorder' element={<MyOrder myOrder={myOrder} myOrderPrice={myOrderPrice} handleDelete={handleDelete} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

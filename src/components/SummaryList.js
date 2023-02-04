@@ -4,7 +4,7 @@ export default function SummaryList({myOrder, handleDelete}){
 
     
 
-    const summaryCardsToDisplay = myOrder.map(elem => <SummaryCard key={elem.id} summaryCard={elem} handleDelete={handleDelete} />)
+    const summaryCardsToDisplay = myOrder.map(elem => <SummaryCard key={elem.id} id={elem.id} summaryCard={elem} handleDelete={handleDelete} />)
 
     return (
         <div className="order_summary">

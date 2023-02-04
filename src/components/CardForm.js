@@ -8,11 +8,13 @@ export default function CardForm({card, addToMyOrder, handleClick}){
         name: card.name,
         price: card.type ? card.price.Medium : card.price,
         img_url: card.img_url,
-        calories: card.type ? card.calories.medium : card.calories,
+        calories: card.type ? card.calories.Medium : card.calories,
         bread: card.type ? 'White' : '',
         size: card.type ? 'Medium' : '',
         pickle: true,
-        amount: 1
+        amount: 1,
+        orderId : card.id + Date().slice(16, 24)
+        
     })
 
     //  useEffect check every card for state, whichever I click on make it active, turn all others deactive
@@ -60,10 +62,18 @@ export default function CardForm({card, addToMyOrder, handleClick}){
         })
     }
 
+    // function handleOrderId(){
+    //     setFormData({
+    //     ...formData,
+    //     orderId : card.id + Date().slice(16, 24)
+    //     });
+    // }
+
     function handleSubmit(e){
         e.preventDefault();
+        // handleOrderId();
         addToMyOrder(formData);
-        
+        console.log(formData)
     }
 
     return (
